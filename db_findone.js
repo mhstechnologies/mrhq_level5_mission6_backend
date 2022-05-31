@@ -15,16 +15,3 @@ MongoClient.connect(url, function(err, db) {
     db.close();
   });
 }); 
-
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  
-  const dbo = db.db(database);
-  const mysort = { name: 1 };
-  
-  dbo.collection("products").find().sort(mysort).toArray(function(err, result) {
-    if (err) throw err;
-    console.log(result);
-    db.close();
-  });
-}); 
