@@ -8,7 +8,9 @@ const database = process.env.DATABASE;
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
-  var dbo = db.db(database);
+  
+  const dbo = db.db(database);
+  
   dbo.collection("products").findOne({}, function(err, result) {
     if (err) throw err;
     console.log(result);
