@@ -6,9 +6,9 @@ const cors = require("cors");
 
 dotenv.config();
 
-const database = process.env.DATABASE;
+const database = process.env.DATABASE || "mission6";
 const port = process.env.PORT || 4000;
-const url = process.env.URL;
+const url = process.env.URL || "mongodb://host.docker.internal:27017/";
 
 // To help process requests easier
 const bodyParser = require("body-parser");
